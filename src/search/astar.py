@@ -54,7 +54,7 @@ def get_all_possible_actions(state, instance_data):
         if not jigs:
             continue
         
-        # Check jigs at factory-side edge (here we assume the first jig is factory-side)
+        # Check jigs at factory-side edge (assuming the first jig is factory-side)
         if len(jigs) > 0:
             jig_id = jigs[0]  # Factory-side jig
             
@@ -170,7 +170,7 @@ def astar_search(initial_state, instance_data, max_iterations=10000, time_limit=
                 open_set.put(next_state, priority)
                 came_from[next_state] = (current_state, action)
     
-    # If we got here, search failed
+    # If this prints, search failed
     print(f"Search failed after {iterations} iterations.")
     print(f"Total states explored: {states_explored}")
     print(f"Search time: {time.time() - start_time:.2f} seconds")

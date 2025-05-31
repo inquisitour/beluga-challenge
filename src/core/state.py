@@ -81,8 +81,8 @@ class BelugaState:
         if not jigs or jig_id not in jigs:
             return False
         
-        # In this simplified implementation, we assume jigs can be accessed from both sides
-        # So we check if jig is at either end of the rack
+        # Assuming jigs can be accessed from both sides
+        # So check if jig is at either end of the rack
         if jigs[0] == jig_id or jigs[-1] == jig_id:
             return True
         
@@ -143,7 +143,7 @@ class BelugaState:
             return True
         
         # Other action types would be checked similarly
-        # For simplicity, we'll assume other actions are valid
+        # For simplicity, assuming other actions are valid
         return True
     
     def get_next_state(self, action, instance_data):
@@ -211,8 +211,8 @@ class BelugaState:
             # Process incoming jigs from the flight
             if current_flight_idx < len(instance_data.get('flights', [])):
                 current_flight = instance_data['flights'][current_flight_idx]
-                # Note: In a complete implementation, we would handle the incoming jigs here
-                # But for simplicity in this one-day implementation, we'll assume they're handled separately
+                # Need to handle the incoming jigs here
+                # For simplicity, assuming they're handled separately
         
         # Convert mutable collections back to immutable
         rack_jigs = {k: tuple(v) for k, v in rack_jigs.items()}

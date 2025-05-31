@@ -21,10 +21,10 @@ def is_goal_state(state, instance_data):
                 return False
     
     # 3. Check if all outgoing jigs have been loaded to Beluga
-    # This is simplified since we just process flights in order
-    # In a complete implementation, we would track which jig types were loaded
+    # Currently just processing flights in order
+    # Need to track which jig types were loaded
     
-    # If we've reached here, all conditions are satisfied
+    # If reached here, all conditions are satisfied
     return True
 
 def check_goal_progress(state, instance_data):
@@ -50,7 +50,7 @@ def check_goal_progress(state, instance_data):
             total_parts += 1
     
     # Count outgoing jigs loaded
-    # This is simplified since we don't track which specific jigs were loaded
+    # Need to track which specific jigs were loaded
     
     return {
         "flights_processed": flights_processed,
@@ -90,13 +90,12 @@ def check_flight_requirements(state, instance_data):
                 incoming_processed += 1
         
         # Outgoing jigs (should be loaded to Beluga)
-        # In a complete implementation, we would track specific jig types
-        # For simplicity, we'll just count requirements
+        # Need to track specific jig types
+        # For simplicity, just counting requirements
         outgoing_jigs = flight.get('outgoing', [])
         outgoing_total += len(outgoing_jigs)
         
-        # For now, we'll assume outgoing requirements are met
-        # This simplification is for the one-day implementation
+        # Assuming outgoing requirements are met
         outgoing_processed = outgoing_total
     
     return {

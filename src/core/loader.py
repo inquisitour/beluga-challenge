@@ -26,7 +26,7 @@ def extract_initial_state_data(instance_data: Dict) -> Dict:
             'size': rack.get('size'),
             'jigs': rack.get('jigs', []),
             # Need to determine which racks are factory_side and beluga_side
-            # For simplicity, assume racks are accessible from both sides
+            # For simplicity, assuming racks are accessible from both sides
             'factory_side': True,
             'beluga_side': True
         }
@@ -47,7 +47,7 @@ def extract_initial_state_data(instance_data: Dict) -> Dict:
             'id': flight.get('name'),  # Changed from 'id' to 'name'
             'incoming': flight.get('incoming', []),
             'outgoing': flight.get('outgoing', []),
-            # No arrival_time in this instance format, so we'll use the index
+            # No arrival_time in this instance format, so using the index
             'arrival_time': None
         })
     

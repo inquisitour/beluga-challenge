@@ -46,7 +46,7 @@ def heuristic(state, instance_data):
     
     # 5. Add estimate for jig swaps needed (very simplified)
     # For each part in the production schedule that's blocked by another jig
-    # add a cost of 2 (1 for the swap, 1 for the move to production)
+    # adding a cost of 2 (1 for the swap, 1 for the move to production)
     blocked_jigs_estimate = 0
     for rack_id, jigs in state.rack_jigs.items():
         for i, jig_id in enumerate(jigs):

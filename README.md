@@ -30,7 +30,7 @@ python scripts/run_solver.py instances/problem_4_s46_j23_r2_oc51_f6.json
 python scripts/run_solver.py instances/problem_4_s46_j23_r2_oc51_f6.json --max-iterations 10000 --time-limit 60
 ```
 
-### Save Output
+### Save Output (saves the output only after finding the plan)
 ```bash
 python scripts/run_solver.py instances/problem_4_s46_j23_r2_oc51_f6.json --output outputs/plan.txt
 ```
